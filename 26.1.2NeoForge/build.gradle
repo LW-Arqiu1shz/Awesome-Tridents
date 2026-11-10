@@ -1,0 +1,46 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.146'
+}
+
+// mod_version 末尾的 -rN 是每轮构建的轮次标记：只出现在 jar 文件名末尾，不进入模组元数据。
+// jar 文件名 = ${archivesName}-${version}.jar，version 保留 -rN；
+// neoforge.mods.toml 里报告的版本号则用剥掉标记的 reportedVersion。
+version = mod_version
+group = mod_group_id
+base { archivesName = mod_id }
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+    withSourcesJar()
+}
+
+neoForge {
+    version = project.neo_version
+    runs {
+        client { client() }
+        server { server(); programArgument '--nogui' }
+    }
+    mods { "${mod_id}" { sourceSet(sourceSets.main) } }
+}
+
+repositories {
+    maven { url = 'https://maven.fabricmc.net/' }
+}
+
+dependencies {
+    // NeoForge 运行时自带 Sponge Mixin 与 MixinExtras，这里只需编译期可见。
+    compileOnly 'net.fabricmc:sponge-mixin:0.17.3+mixin.0.8.7'
+    compileOnly "io.github.llamalad7:mixinextras-common:${mixinextras_version}"
+}
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+def reportedVersion = mod_version.toString().replaceAll(/-r\d+$/, '')
+processResources {
+    def props = [minecraft_version_range: minecraft_version_range, neo_version_range: neo_version_range,
+                 loader_version_range: loader_version_range, mod_version: reportedVersion]
+    inputs.properties props
+    // 不显式设成 UTF-8 时，expand 会按平台默认编码读写，把描述里的中文写坏。
+    filteringCharset = 'UTF-8'
+    filesMatching('META-INF/neoforge.mods.toml') { expand props }
+}

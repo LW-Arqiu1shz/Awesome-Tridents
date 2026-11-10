@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "awesome_tridents",
+  "version": "${version}",
+  "name": "Awesome Tridents",
+  "description": "原版的三叉戟简直就是设计成功的武器的反面教材。逆天的获取难度，可爱的伤害，局限性极强的附魔……甚至还会因为手抖丢进虚空永远离你而去。\"为什么不让它有用点呢？\"你想道。于是你下载了本模组。希望它可以满足你对三叉戟的所有幻想！\nThe vanilla Trident is a textbook example of how *not* to design a weapon. It’s absurdly difficult to obtain, deals pathetic damage, and is severely limited in terms of enchantments - not to mention the risk of accidentally throwing it into the void, where it’s lost forever. \"Why can't it actually be useful?\" you wonder. So, you downloaded this mod - hoping it will finally fulfill all your dreams for what a Trident should be!",
+  "authors": [
+    "Arqiu-owo"
+  ],
+  "license": ["LGPL-3.0-only", "CC-BY-NC-SA-4.0"],
+  "icon": "assets/awesome_tridents/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "cn.blockforge.generated.awesometridents.GeneratedMod"
+    ],
+    "modmenu": [
+      "cn.blockforge.generated.awesometridents.client.AwesomeTridentsModMenu"
+    ]
+  },
+  "mixins": [
+    "awesome_tridents.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

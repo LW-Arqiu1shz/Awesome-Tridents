@@ -1,5 +1,7 @@
 # 三叉戟强无敌 · Awesome Tridents
 
+> 本分支 / This branch: **26.3Fabric**
+
 [中文](#中文) · [English](#english)
 
 > Author / 作者：**Arqiu-owo** · Code: `LGPL-3.0-only` · Assets: `CC-BY-NC-SA-4.0` — see [LICENSE.md](LICENSE.md)
@@ -26,24 +28,24 @@
 
 ### 支持的版本
 
-| 文件夹 | Minecraft | 加载器 |
+| 分支 | Minecraft | 加载器 |
 |---|---|---|
-| [`26.1.2Fabric`](26.1.2Fabric) | 26.1.2 | Fabric（Mod Menu 18.x 可选） |
-| [`26.1.2NeoForge`](26.1.2NeoForge) | 26.1.2 | NeoForge 26.1.2.112 |
-| [`26.3Fabric`](26.3Fabric) | 26.3 | Fabric（Mod Menu 21.x 可选） |
-| [`26.3NeoForge`](26.3NeoForge) | 26.3 | NeoForge 26.3.0.101 |
+| [`26.1.2Fabric`](../../tree/26.1.2Fabric) | 26.1.2 | Fabric（Mod Menu 18.x 可选） |
+| [`26.1.2NeoForge`](../../tree/26.1.2NeoForge) | 26.1.2 | NeoForge 26.1.2.112 |
+| [`26.3Fabric`](../../tree/main) | 26.3 | Fabric（Mod Menu 21.x 可选） |
+| [`26.3NeoForge`](../../tree/26.3NeoForge) | 26.3 | NeoForge 26.3.0.101 |
 
-每个文件夹都是独立的 Gradle 工程，各自的 `CONFIGURATION.md` 里有详细的配置说明和更新记录。
+每个版本是仓库里的一个**分支**（`main` = 26.3 Fabric，主要开发版本），分支根目录就是 Gradle 工程，`CONFIGURATION.md` 里有详细的配置说明和更新记录。
 
 ### 自己编译
 
-需要 **JDK 25** 和 **Gradle 9.7+**（仓库里没有附带 Gradle Wrapper）。进入想要的版本文件夹后运行：
+需要 **JDK 25** 和 **Gradle 9.7+**（仓库里没有附带 Gradle Wrapper）。切换到想要的版本分支，在根目录运行：
 
 ```
 gradle build
 ```
 
-jar 会生成在该文件夹的 `build/libs/` 里。
+jar 会生成在 `build/libs/` 里。
 
 ---
 
@@ -71,24 +73,24 @@ This is a server-side gameplay mod: on a dedicated server it only needs to be in
 
 ### Supported versions
 
-| Folder | Minecraft | Loader |
+| Branch | Minecraft | Loader |
 |---|---|---|
-| [`26.1.2Fabric`](26.1.2Fabric) | 26.1.2 | Fabric (Mod Menu 18.x optional) |
-| [`26.1.2NeoForge`](26.1.2NeoForge) | 26.1.2 | NeoForge 26.1.2.112 |
-| [`26.3Fabric`](26.3Fabric) | 26.3 | Fabric (Mod Menu 21.x optional) |
-| [`26.3NeoForge`](26.3NeoForge) | 26.3 | NeoForge 26.3.0.101 |
+| [`26.1.2Fabric`](../../tree/26.1.2Fabric) | 26.1.2 | Fabric (Mod Menu 18.x optional) |
+| [`26.1.2NeoForge`](../../tree/26.1.2NeoForge) | 26.1.2 | NeoForge 26.1.2.112 |
+| [`26.3Fabric`](../../tree/main) | 26.3 | Fabric (Mod Menu 21.x optional) |
+| [`26.3NeoForge`](../../tree/26.3NeoForge) | 26.3 | NeoForge 26.3.0.101 |
 
-Each folder is a standalone Gradle project; its `CONFIGURATION.md` has the detailed config notes and changelog (in Chinese).
+Each version lives on its own **branch** (`main` = 26.3 Fabric, the main development version); the branch root is the Gradle project, and `CONFIGURATION.md` has the detailed config notes and changelog (in Chinese).
 
 ### Building
 
-Requires **JDK 25** and **Gradle 9.7+** (no Gradle Wrapper is included). In the folder for the version you want, run:
+Requires **JDK 25** and **Gradle 9.7+** (no Gradle Wrapper is included). Check out the branch for the version you want and run, in the repository root:
 
 ```
 gradle build
 ```
 
-The jar is written to `build/libs/` inside that folder.
+The jar is written to `build/libs/`.
 
 ---
 

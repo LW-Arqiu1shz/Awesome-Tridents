@@ -41,7 +41,6 @@
   "config.awesome_tridents.search": "Search",
   "config.awesome_tridents.search_hint": "Search configuration options...",
   "config.awesome_tridents.search_empty": "No matching options",
-  "modmenu.nameTranslation.awesome_tridents": "Awesome Tridents",
-  "modmenu.summaryTranslation.awesome_tridents": "A server-side gameplay mod that makes the Trident actually worth using.",
-  "modmenu.descriptionTranslation.awesome_tridents": "The vanilla Trident is a textbook example of how *not* to design a weapon. It’s absurdly difficult to obtain, deals pathetic damage, and is severely limited in terms of enchantments - not to mention the risk of accidentally throwing it into the void, where it’s lost forever. \"Why can't it actually be useful?\" you wonder. So, you downloaded this mod - hoping it will finally fulfill all your dreams for what a Trident should be!"
+  "neoforge.screen.mods.info.displayname.awesome_tridents": "Awesome Tridents",
+  "neoforge.screen.mods.info.description.awesome_tridents": "The vanilla Trident is a textbook example of how *not* to design a weapon. It’s absurdly difficult to obtain, deals pathetic damage, and is severely limited in terms of enchantments - not to mention the risk of accidentally throwing it into the void, where it’s lost forever. \"Why can't it actually be useful?\" you wonder. So, you downloaded this mod - hoping it will finally fulfill all your dreams for what a Trident should be!"
 }

@@ -1,8 +1,6 @@
 package cn.blockforge.generated.awesometridents.client;
 
 import cn.blockforge.generated.awesometridents.TridentConfig;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -30,7 +28,6 @@ import java.util.Map;
  * （否则焦点会落在已消失的控件上，回车/空格会再次触发它，键盘输入也进不了搜索框）；
  * 搜索只替换列表里显示哪些条目，条目对象本身复用。</p>
  */
-@Environment(EnvType.CLIENT)
 public final class AwesomeTridentsConfigScreen extends Screen {
     /** 展示顺序即配置顺序：大类在前，它的子项紧随其后。 */
     private static final List<TridentConfig.Option> ALL_OPTIONS = List.of(

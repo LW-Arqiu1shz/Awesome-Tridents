@@ -1,13 +1,13 @@
 # Awesome Tridents 配置说明
 
 - 配置文件：`config/awesome_tridents.json`。首次启动会自动生成，全部选项默认为 `true`。
-- 安装 Mod Menu 21.0.0 后，可从模组列表打开本模组的配置界面；页面顶部提供搜索框，左侧显示选项名称，右侧显示开关；子选项会缩进显示在所属大类下方。全部选项在一个连续列表中，用鼠标滚轮或右侧滚动条浏览。切换后立即保存并即时应用，无需重启游戏或重启世界。
+- 在 NeoForge 自带的模组列表中选中本模组，点击「配置」按钮即可打开配置界面；页面顶部提供搜索框，左侧显示选项名称，右侧显示开关；子选项会缩进显示在所属大类下方。全部选项在一个连续列表中，用鼠标滚轮或右侧滚动条浏览。切换后立即保存并即时应用，无需重启游戏或重启世界。
 - 子选项必须先开启对应大类才可编辑；大类关闭时，子选项保留原值但不生效。
-- 本模组为服务端玩法模组。单人游戏中，Mod Menu 界面直接修改当前实例使用的配置；独立专用服务器读取服务器自身的 `config/awesome_tridents.json`，远程客户端的 Mod Menu 设置不会跨网络擅自覆盖服务器配置。
-- Mod Menu 是可选依赖；未安装 Mod Menu 时，服务端玩法与配置文件仍可正常使用。
+- 本模组为服务端玩法模组。单人游戏中，配置界面直接修改当前实例使用的配置；独立专用服务器读取服务器自身的 `config/awesome_tridents.json`，远程客户端的配置界面设置不会跨网络擅自覆盖服务器配置。
+- 配置界面只在客户端加载（`client/AwesomeTridentsClient`，`@Mod(dist = Dist.CLIENT)`）；专用服务器不加载任何界面类。
 - 选项 1（三叉戟可合成）关闭后：合成表结果槽与配方书一键摆放都会被拦下，无法取出三叉戟。配方书里的配方图标由客户端本地解锁状态决定，可能仍显示，但点它不会出货。
 
-此源码包对应 `1.2.0+26.3Fabric`。
+此源码包对应 `1.2.0+26.3NeoForge`（由 26.3Fabric 的 1.2.0-r18 同步移植）。
 
 ## 1.2.0 配方拦截类加载修复
 
@@ -30,9 +30,15 @@
 - 新增「引雷更改」子选项「雷击烤肉」（`channelingCookDrops`，默认开启），控制引雷击杀时掉落物是否被烤熟。
 - `channeling.json` 恢复原版"引雷三叉戟在雷暴中命中避雷针召唤闪电"效果；本模组召出的闪电补回原版的三叉戟雷鸣音效。
 - 配置界面：取消分页，改为连续滚动列表；大类名称不再使用粗体。
-- 语言文件：新增 Mod Menu 的模组名/简介/描述翻译键，中英文分别显示对应语言。
+- 语言文件：新增 NeoForge 模组列表的描述翻译键，中英文分别显示对应语言（名称也跟随语言，见下）。
+
+## r18 补充：模组列表语言统一
+
+- 模组列表名称跟随语言：通过 NeoForge 26.3 官方扩展点 `ModDisplayInfo`（见 `client/AwesomeTridentsClient`）把名称改为翻译键 `neoforge.screen.mods.info.displayname.awesome_tridents` 的译文（中文「三叉戟强无敌」，英文「Awesome Tridents」）。
+- 描述翻译键改为 NeoForge 26.3 新模组列表使用的 `neoforge.screen.mods.info.description.awesome_tridents`（旧的 `fml.menu.mods.info.description.*` 在 26.3 已不再被读取，所以之前描述不会切换语言）。
+- 搜索：中文界面下，模组列表搜索同时匹配翻译名和英文原名，搜「Awesome Tridents」或「三叉戟强无敌」都能找到本模组（只影响搜索匹配，不改变显示的名称）。
 
 ## 产物命名
 
-- `gradle.properties` 里 `mod_version` 末尾的 `-rN` 是构建平台每轮追加的轮次标记，只出现在 jar 文件名末尾（`awesome_tridents-1.2.0+26.3Fabric-rN.jar`）；`fabric.mod.json` 中的 `version` 仍是剥掉标记的纯净版本 `1.2.0+26.3Fabric`。
+- `gradle.properties` 里 `mod_version` 末尾的 `-rN` 是构建平台每轮追加的轮次标记，只出现在 jar 文件名末尾（`awesome_tridents-1.2.0+26.3NeoForge-rN.jar`）；`neoforge.mods.toml` 中的 `version` 仍是剥掉标记的纯净版本 `1.2.0+26.3NeoForge`。
 

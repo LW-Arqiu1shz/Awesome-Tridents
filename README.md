@@ -1,6 +1,6 @@
 # 三叉戟强无敌 · Awesome Tridents
 
-> 本分支 / This branch: **26.3Fabric**
+> 本分支 / This branch: **26.3NeoForge**
 
 [中文](#中文) · [English](#english)
 

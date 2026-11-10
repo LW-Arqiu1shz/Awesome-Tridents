@@ -1,2 +1,4 @@
-pluginManagement { repositories { maven { url = 'https://maven.fabricmc.net/' }; gradlePluginPortal(); mavenCentral() } }
+pluginManagement {
+    repositories { gradlePluginPortal(); maven { url = 'https://maven.neoforged.net/releases' } }
+}
 rootProject.name = 'blockforge-generated'

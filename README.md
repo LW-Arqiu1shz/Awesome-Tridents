@@ -32,10 +32,10 @@
 |---|---|---|
 | [`26.1.2Fabric`](../../tree/26.1.2Fabric) | 26.1.2 | Fabric（Mod Menu 18.x 可选） |
 | [`26.1.2NeoForge`](../../tree/26.1.2NeoForge) | 26.1.2 | NeoForge 26.1.2.112 |
-| [`26.3Fabric`](../../tree/main) | 26.3 | Fabric（Mod Menu 21.x 可选） |
+| [`26.3Fabric`](../../tree/26.3Fabric) | 26.3 | Fabric（Mod Menu 21.x 可选） |
 | [`26.3NeoForge`](../../tree/26.3NeoForge) | 26.3 | NeoForge 26.3.0.101 |
 
-每个版本是仓库里的一个**分支**（`main` = 26.3 Fabric，主要开发版本），分支根目录就是 Gradle 工程，`CONFIGURATION.md` 里有详细的配置说明和更新记录。
+每个版本是仓库里的一个**分支**（`26.3Fabric` 是默认分支，也是主要开发版本），分支根目录就是 Gradle 工程，`CONFIGURATION.md` 里有详细的配置说明和更新记录。
 
 ### 自己编译
 
@@ -77,10 +77,10 @@ This is a server-side gameplay mod: on a dedicated server it only needs to be in
 |---|---|---|
 | [`26.1.2Fabric`](../../tree/26.1.2Fabric) | 26.1.2 | Fabric (Mod Menu 18.x optional) |
 | [`26.1.2NeoForge`](../../tree/26.1.2NeoForge) | 26.1.2 | NeoForge 26.1.2.112 |
-| [`26.3Fabric`](../../tree/main) | 26.3 | Fabric (Mod Menu 21.x optional) |
+| [`26.3Fabric`](../../tree/26.3Fabric) | 26.3 | Fabric (Mod Menu 21.x optional) |
 | [`26.3NeoForge`](../../tree/26.3NeoForge) | 26.3 | NeoForge 26.3.0.101 |
 
-Each version lives on its own **branch** (`main` = 26.3 Fabric, the main development version); the branch root is the Gradle project, and `CONFIGURATION.md` has the detailed config notes and changelog (in Chinese).
+Each version lives on its own **branch** (`26.3Fabric` is the default branch and the main development version); the branch root is the Gradle project, and `CONFIGURATION.md` has the detailed config notes and changelog (in Chinese).
 
 ### Building
 

@@ -22,8 +22,8 @@
     "awesome_tridents.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.19.3",
-    "minecraft": "~26.3",
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~26.1.2",
     "java": ">=25",
     "fabric-api": "*"
   },

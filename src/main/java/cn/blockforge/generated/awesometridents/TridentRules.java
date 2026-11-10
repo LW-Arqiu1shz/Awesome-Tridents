@@ -1,6 +1,6 @@
 package cn.blockforge.generated.awesometridents;
 
-import net.minecraft.advancements.triggers.CriteriaTriggers;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.Holder;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponents;
@@ -18,7 +18,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySpawnReason;
-import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -207,7 +207,7 @@ public final class TridentRules {
             }
         }
 
-        LightningBolt bolt = EntityTypes.LIGHTNING_BOLT.create(level, EntitySpawnReason.MOB_SUMMONED);
+        LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(level, EntitySpawnReason.MOB_SUMMONED);
         if (bolt == null) {
             return;
         }
@@ -261,13 +261,13 @@ public final class TridentRules {
 
             LivingEntity living = (LivingEntity) target;
             LivingEntityLastHurtAccess accessor = (LivingEntityLastHurtAccess) (Object) living;
-            int savedCooldown = living.damageCooldownTime;
+            int savedCooldown = living.invulnerableTime;
             float savedLastHurt = accessor.awesomeTridents$getLastHurt();
-            living.damageCooldownTime = 0;
+            living.invulnerableTime = 0;
             try {
                 living.thunderHit(level, bolt);
             } finally {
-                living.damageCooldownTime = savedCooldown;
+                living.invulnerableTime = savedCooldown;
                 accessor.awesomeTridents$setLastHurt(savedLastHurt);
             }
         } finally {

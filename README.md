@@ -94,6 +94,11 @@ The jar is written to `build/libs/`.
 
 ---
 
+## 贡献者 / Contributors
+
+- **Arqiu-owo** — 作者 / Author：设计、代码与素材 / design, code and assets
+- **DeepSeek** — 发布工程 / Release engineering：把各加载器各自的 Release 合并为「每个模组版本一个条目」，并整理文档 / consolidated the per-loader releases into one entry per mod version, and maintained the docs
+
 ## License / 许可证
 
 - Code / 代码：[GNU LGPL v3.0](COPYING.LESSER)（with [GPL v3.0](COPYING)）

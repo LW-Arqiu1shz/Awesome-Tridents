@@ -41,7 +41,6 @@
   "config.awesome_tridents.search": "搜索",
   "config.awesome_tridents.search_hint": "搜索配置选项……",
   "config.awesome_tridents.search_empty": "没有匹配的选项",
-  "modmenu.nameTranslation.awesome_tridents": "三叉戟强无敌",
-  "modmenu.summaryTranslation.awesome_tridents": "让三叉戟真正好用起来的服务端玩法模组。",
-  "modmenu.descriptionTranslation.awesome_tridents": "原版的三叉戟简直就是设计成功的武器的反面教材。逆天的获取难度，可爱的伤害，局限性极强的附魔……甚至还会因为手抖丢进虚空永远离你而去。\"为什么不让它有用点呢？\"你想道。于是你下载了本模组。希望它可以满足你对三叉戟的所有幻想！"
+  "fml.menu.mods.info.displayname.awesome_tridents": "三叉戟强无敌",
+  "fml.menu.mods.info.description.awesome_tridents": "原版的三叉戟简直就是设计成功的武器的反面教材。逆天的获取难度，可爱的伤害，局限性极强的附魔……甚至还会因为手抖丢进虚空永远离你而去。\"为什么不让它有用点呢？\"你想道。于是你下载了本模组。希望它可以满足你对三叉戟的所有幻想！"
 }

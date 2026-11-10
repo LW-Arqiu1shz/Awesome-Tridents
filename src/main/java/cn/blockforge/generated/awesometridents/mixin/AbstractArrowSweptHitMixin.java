@@ -56,7 +56,7 @@ public abstract class AbstractArrowSweptHitMixin {
                 self.level(), self, from, to,
                 new AABB(from, to).inflate(2.0),
                 this::canHitEntity,
-                TridentRules.TRIDENT_SWEEP_MARGIN, ClipContext.Block.COLLIDER, true, true);
+                TridentRules.TRIDENT_SWEEP_MARGIN, ClipContext.Block.COLLIDER, true);
         EntityHitResult nearest = null;
         double nearestDist = Double.MAX_VALUE;
         for (EntityHitResult hit : hits) {

@@ -16,7 +16,11 @@
     "RecipeCacheMixin",
     "RecipeManagerMixin"
   ],
-  "client": [],
+  "client": [
+    "client.ModListScreenMixin",
+    "client.ModListEntryMixin",
+    "client.ModListSortMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
  * 开放 {@code LivingEntity.lastHurt}（protected）给 {@code TridentRules} 使用：
  * 闪电无视无敌帧结算后需要把目标的“上次受伤数值”还原，避免改变它原有的受伤记录。
  *
- * <p>无敌帧字段本身（{@code damageCooldownTime}）在 26.3 是 public，不需要访问器。</p>
+ * <p>无敌帧字段本身（{@code invulnerableTime}）在 26.1.2 是 public，不需要访问器。</p>
  */
 @Mixin(LivingEntity.class)
 public interface LivingEntityAccessor extends LivingEntityLastHurtAccess {

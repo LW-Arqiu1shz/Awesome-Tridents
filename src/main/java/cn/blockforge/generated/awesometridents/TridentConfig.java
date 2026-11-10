@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import net.fabricmc.loader.api.FabricLoader;
+import net.neoforged.fml.loading.FMLPaths;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -23,7 +23,7 @@ import java.util.Map;
  */
 public final class TridentConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("awesome_tridents.json");
+    private static final Path CONFIG_PATH = FMLPaths.CONFIGDIR.get().resolve("awesome_tridents.json");
     private static final Map<Option, Boolean> VALUES = new EnumMap<>(Option.class);
 
     static {

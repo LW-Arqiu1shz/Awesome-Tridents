@@ -97,6 +97,7 @@ The jar is written to `build/libs/`.
 ## 贡献者 / Contributors
 
 - **Arqiu-owo** — 作者 / Author：设计、代码与素材 / design, code and assets
+- **Claude**（Anthropic）— 主要开发 / Main development：1.2.0 的崩溃修复、配置界面、新功能「雷击烤肉」、移植到 4 个版本、双语模组列表，以及开源整理 / crash fixes, config screen, the Lightning Roast option, ports to all four versions, bilingual mod list, and the open-source setup for 1.2.0
 - **DeepSeek** — 发布工程 / Release engineering：把各加载器各自的 Release 合并为「每个模组版本一个条目」，并整理文档 / consolidated the per-loader releases into one entry per mod version, and maintained the docs
 
 ## License / 许可证

@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.blockforge.generated.awesometridents.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AbstractArrowSweptHitMixin",
+    "LivingEntityAccessor",
+    "LivingEntityDeathLootMixin",
+    "PlayerAttackMixin",
+    "RiptideGuardMixin",
+    "RiptideSpinMixin",
+    "ThrownTridentMixin",
+    "TridentItemMixin",
+    "LightningBoltMixin",
+    "RecipeCacheMixin",
+    "RecipeManagerMixin"
+  ],
+  "client": [
+    "client.ModListSearchMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

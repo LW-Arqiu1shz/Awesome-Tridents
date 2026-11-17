@@ -1,0 +1,37 @@
+modLoader = "javafml"
+# javafml 语言加载器当前版本为 1，写成别的下界会让模组被判为不兼容
+loaderVersion = "${loader_version_range}"
+# NeoForge 的强制字段，缺失时整个 jar 会被判定为「不是有效的模组」
+license = "LGPL-3.0-only (code), CC-BY-NC-SA-4.0 (assets)"
+
+[[mods]]
+modId = "awesome_tridents"
+version = "${mod_version}"
+displayName = "Awesome Tridents"
+description = '''原版的三叉戟简直就是设计成功的武器的反面教材。逆天的获取难度，可爱的伤害，局限性极强的附魔……甚至还会因为手抖丢进虚空永远离你而去。"为什么不让它有用点呢？"你想道。于是你下载了本模组。希望它可以满足你对三叉戟的所有幻想！
+The vanilla Trident is a textbook example of how *not* to design a weapon. It’s absurdly difficult to obtain, deals pathetic damage, and is severely limited in terms of enchantments - not to mention the risk of accidentally throwing it into the void, where it’s lost forever. "Why can't it actually be useful?" you wonder. So, you downloaded this mod - hoping it will finally fulfill all your dreams for what a Trident should be!'''
+authors = "Arqiu-owo"
+# 模组列表里的封面：NeoForge 的字段是 logoFile，路径从 jar 根目录算起；logoBlur=false 让像素风封面缩放时不发虚。
+logoFile = "assets/awesome_tridents/icon.png"
+logoBlur = false
+
+[[mixins]]
+config = "awesome_tridents.mixins.json"
+
+[[dependencies.awesome_tridents]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neo_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.awesome_tridents]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+# Java 版本要求走 feature，不走 dependency：写成 modId = "java" 会被当成缺失的前置模组、直接拒绝启动。
+[features.awesome_tridents]
+javaVersion = "[25,)"

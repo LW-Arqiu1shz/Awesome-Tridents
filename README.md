@@ -32,6 +32,8 @@
 |---|---|---|
 | [`26.1.2Fabric`](../../tree/26.1.2Fabric) | 26.1.2 | Fabric（Mod Menu 18.x 可选） |
 | [`26.1.2NeoForge`](../../tree/26.1.2NeoForge) | 26.1.2 | NeoForge 26.1.2.112 |
+| [`26.2Fabric`](../../tree/26.2Fabric) | 26.2 | Fabric（Mod Menu 20.x 可选） |
+| [`26.2NeoForge`](../../tree/26.2NeoForge) | 26.2 | NeoForge 26.2.0.95 |
 | [`26.3Fabric`](../../tree/26.3Fabric) | 26.3 | Fabric（Mod Menu 21.x 可选） |
 | [`26.3NeoForge`](../../tree/26.3NeoForge) | 26.3 | NeoForge 26.3.0.101 |
 
@@ -77,6 +79,8 @@ This is a server-side gameplay mod: on a dedicated server it only needs to be in
 |---|---|---|
 | [`26.1.2Fabric`](../../tree/26.1.2Fabric) | 26.1.2 | Fabric (Mod Menu 18.x optional) |
 | [`26.1.2NeoForge`](../../tree/26.1.2NeoForge) | 26.1.2 | NeoForge 26.1.2.112 |
+| [`26.2Fabric`](../../tree/26.2Fabric) | 26.2 | Fabric (Mod Menu 20.x optional) |
+| [`26.2NeoForge`](../../tree/26.2NeoForge) | 26.2 | NeoForge 26.2.0.95 |
 | [`26.3Fabric`](../../tree/26.3Fabric) | 26.3 | Fabric (Mod Menu 21.x optional) |
 | [`26.3NeoForge`](../../tree/26.3NeoForge) | 26.3 | NeoForge 26.3.0.101 |
 

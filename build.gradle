@@ -1,0 +1,50 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+// mod_version 末尾的 -rN 是构建平台每轮自动追加的轮次计数（每次编译都会盖回 gradle.properties）。
+// 本轮要求：这个轮次标记只出现在 jar 文件名末尾，不进入模组元数据。
+// 因此 project.version 保持纯净版本（fabric.mod.json 里的 ${version} 用它），
+// 只在 Jar 打包任务上单独覆盖 archiveVersion，让产物文件名带上 -rN。
+def rawModVersion = project.mod_version.toString()
+def roundMatcher = (rawModVersion =~ /-r\d+$/)
+def roundTag = roundMatcher.find() ? roundMatcher.group() : ''
+version = rawModVersion.replaceAll(/-r\d+$/, '')
+group = project.maven_group
+
+repositories {
+    mavenCentral()
+    maven { url = "https://maven.terraformersmc.com/releases/" }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    compileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+    // filter 同样按 filteringCharset 读写，不显式设成 UTF-8 时取平台默认
+    // （容器里常是 ASCII），会把 description 里的中文破坏成非法 UTF-8：
+    // Gradle 仍报 BUILD SUCCESSFUL，但最终 JAR 里的 JSON 已经坏了。
+    filteringCharset = 'UTF-8'
+    // 只替换版本占位符。Gradle expand 会把 JSON 字符串里的 \n 解释成真实换行，
+    // 造成源文件合法、最终 JAR 中 fabric.mod.json 却损坏。
+    filesMatching("fabric.mod.json") {
+        filter { line -> line.replace('${version}', project.version.toString()) }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach { options.release = 25; options.encoding = 'UTF-8' }
+java { toolchain.languageVersion = JavaLanguageVersion.of(25); withSourcesJar() }
+base { archivesName = project.archives_base_name }
+
+// 产物文件名末尾追加轮次标记（awesome_tridents-<纯净版本>-rN.jar）。
+// 只动 archiveVersion：fabric.mod.json 里的 version 仍取上面剥干净的 project.version。
+if (roundTag) {
+    tasks.withType(Jar).configureEach {
+        archiveVersion = project.version.toString() + roundTag
+    }
+}
